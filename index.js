@@ -31,6 +31,11 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'Enter project usage:',
+        name: 'usage'
+    },
+    {
+        type: 'input',
         message: 'Enter ways to test the project:',
         name: 'test'
     },
@@ -38,7 +43,7 @@ const questions = [
         type: 'list',
         message: 'Select a license for this project:',
         name: 'license',
-        choices: ["MIT", "Apache", "The_Unlicense", "Mozilla_PL_2", "GNU_3"]
+        choices: ["MIT", "Apache", "Mozilla_PL_2", "Perl"]
     },
     {
         type: 'input',

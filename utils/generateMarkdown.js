@@ -1,42 +1,41 @@
 // function to generate markdown for README
 const generateMarkdown = (data) => {
+  let badge
+  if(data.license=='MIT'){
+    badge = 'https://img.shields.io/apm/l/vim-mode'
+  }else if(data.license =='Apache'){
+    badge = 'https://img.shields.io/aur/license/android-studio'
+  }else if(data.license =='Mozilla'){
+    badge = 'https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg'
+  }else{
+    badge = 'https://img.shields.io/badge/License-Perl-0298c3.svg'
+  }
+
   const temp = 
   `# ${data.title}
-  ${data.license}
-
-  ## Description
-  ${data.description} 
-
-  ## Table of Contents
-  * [Installation](#Installation-Guide)
-
-  * [Usage](#Usage)
-
-  * [Contributing](#Contributing)
-
-  * [Tests](#Tests)
-
-  * [Questions](#Questions)
-
-  * [License](#License)
-  
-  ## Installation-Guide
-  ${data.install}
-
-  ## Usage
-
-  ## License
-
-  ## Contributing
-  ${data.contribute}
-
-  ## Tests
-  ${data.test}
-
-  ## Questions
-  Link to GitHub profile: https://github.com/${data.userName}
-
-  For further questions, feel free to email me at: ${data.email}
+  \n![licenseBadge](${badge})
+  \n## Description
+  \n${data.description} 
+  \n## Table of Contents
+  \n* [Installation](#Installation-Guide)
+  \n* [Usage](#Usage)
+  \n* [Contributing](#Contributing)
+  \n* [Tests](#Tests)
+  \n* [Questions](#Questions)
+  \n* [License](#License)
+  \n## Installation-Guide
+  \n${data.install}
+  \n## Usage
+  \n${data.usage}
+  \n## License
+  \nLicense under ${data.license}
+  \n## Contributing
+  \n${data.contribute}
+  \n## Tests
+  \n${data.test}
+  \n ## Questions
+  \nLink to GitHub profile: https://github.com/${data.userName}
+  \nFor further questions, feel free to email me at: ${data.email}
   `;
   return temp;
 }
